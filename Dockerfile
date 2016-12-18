@@ -1,6 +1,7 @@
 FROM blacktop/bro
 
-RUN apt-get update \
+RUN sed -i '/opensuse/ s/^/#/' /etc/apt/sources.list.d/*.list \
+ && apt-get update \
  && apt-get install -y --no-install-recommends \
         ca-certificates \
         bzip2 \
