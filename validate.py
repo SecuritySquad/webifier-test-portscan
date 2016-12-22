@@ -17,7 +17,7 @@ def validate():
     return riskyports
 
 def printresult(riskyports):
-     print prefix + ": {\"result\": " + ("MALICIOUS" if len(riskyports) > 0 else "CLEAN") + ", \"info\": {\"unknown_ports\": [" + ", ".join(riskyports) + "]}}"
+     print prefix + ": {\"result\": " + ("\"MALICIOUS\"" if len(riskyports) > 0 else "\"CLEAN\"") + ", \"info\": {\"unknown_ports\": [" + ", ".join(riskyports) + "]}}"
 
 
 
