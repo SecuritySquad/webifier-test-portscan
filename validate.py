@@ -16,8 +16,8 @@ def validate():
     fobj.close()
     return riskyports
 
-def printresult(riskyports):
-     print prefix + ": {\"result\": " + ("\"MALICIOUS\"" if len(riskyports) > 0 else "\"CLEAN\"") + ", \"info\": {\"unknown_ports\": [" + ", ".join(riskyports) + "]}}"
+def printresult(riskyports, result):
+     print prefix + ": {\"result\": " + result + ", \"info\": {\"unknown_ports\": [" + ", ".join(riskyports) + "]}}"
 
 
 
@@ -25,7 +25,13 @@ if __name__ == "__main__":
     if len(sys.argv) == 2:
         prefix = sys.argv[1]
         riskyports = validate()
-        printresult(riskyports)
+        if(len(riskyports == 0)){
+            printresult(riskyports,"CLEAN")
+        }else if(len(riskyports < 3)){
+            printresult(riskyports,"SUSPICIOUS")
+        }else {
+            printresult(riskyports,"MALICIOUS")
+        }
 
     else:
         print "ID is missing!"
