@@ -25,13 +25,13 @@ if __name__ == "__main__":
     if len(sys.argv) == 2:
         prefix = sys.argv[1]
         riskyports = validate()
-        if(len(riskyports == 0)){
+        if len(riskyports)==0:
             printresult(riskyports,"CLEAN")
-        }else if(len(riskyports < 3)){
+        elif len(riskyports)<3:
             printresult(riskyports,"SUSPICIOUS")
-        }else {
+        else:
             printresult(riskyports,"MALICIOUS")
-        }
+
 
     else:
         print "ID is missing!"
