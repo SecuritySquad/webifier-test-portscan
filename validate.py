@@ -17,7 +17,7 @@ def validate():
     return riskyports
 
 def printresult(riskyports, result):
-     print prefix + ": {\"result\":\" " + result + "\", \"info\": {\"unknown_ports\": [" + ", ".join(riskyports) + "]}}"
+     print prefix + ": {\"result\":\"" + result + "\", \"info\": {\"unknown_ports\": [" + ", ".join(riskyports) + "]}}"
 
 
 
