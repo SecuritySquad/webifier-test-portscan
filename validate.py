@@ -1,4 +1,6 @@
 import sys
+import os.path
+import time
 
 def validate():
     fobj = open("simple_conns_port.log")
@@ -24,6 +26,9 @@ def printresult(riskyports, result):
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         prefix = sys.argv[1]
+        while os.path.exists("simple_conns_port.log") == False :
+            print "waiting for file..."
+            time.sleep( 2 )
         riskyports = validate()
         if len(riskyports)==0:
             printresult(riskyports,"CLEAN")
